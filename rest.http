@@ -1,0 +1,12 @@
+###
+PUT http://192.168.164.56:8080/data
+Content-Type: application/json
+
+{
+  "temperatureIn": 38.0,
+  "humidityIntoIncubator": 70,
+  "lightLevel": 1
+}
+
+###
+POST http://192.168.164.56:8080/data

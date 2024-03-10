@@ -45,7 +45,7 @@ app.put('/data', async (req, res) => {
 });
 
 // Ruta para manejar las solicitudes POST
-app.post('/data', async (req, res) => {
+app.get('/data', async (req, res) => {
   try {
     const sectionNumber = req.body.page || 1; // Por defecto, obtén la sección 1 si no se proporciona ningún parámetro
     const pageSize = 10; // Tamaño de cada página de datos

@@ -1,5 +1,5 @@
 ###
-PUT http://192.168.164.56:8080/data
+PUT http://localhost:8080/data
 Content-Type: application/json
 
 {
@@ -9,4 +9,4 @@ Content-Type: application/json
 }
 
 ###
-POST http://192.168.164.56:8080/data
+POST https://incubator-server.onrender.com/data

@@ -4,9 +4,10 @@ const mongoose = require('mongoose');
 
 const app = express();
 const PORT = process.env.PORT || 8080; // Puerto en el que escuchará el servidor
+const PASSWORD = process.env.PASSWORD; // Contraseña de la base de datos MongoDB
 
 // Conexión a la base de datos MongoDB
-mongoose.connect(`mongodb+srv://denis:poultrypro123@cluster0.kzcrusy.mongodb.net/incubator?retryWrites=true&w=majority&appName=Cluster0/`, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://denis:${PASSWORD}@cluster0.kzcrusy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
   .then(() => console.log('Conexión a MongoDB establecida'))
   .catch(err => console.error('Error al conectar a MongoDB:', err));
 
@@ -55,7 +56,8 @@ app.get('/data', async (req, res) => {
     const endIndex = sectionNumber * pageSize;
 
     // Obtener los datos de la base de datos según el índice de inicio y fin
-    const data = await Data.find().sort({ createdAt: -1 }).skip(startIndex).limit(pageSize);
+    const data = await Data.find();
+    console.log(data);
     res.json(data);
   } catch (err) {
     console.error('Error al consultar los datos en MongoDB:', err);

@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 8080; // Puerto en el que escuchará el servidor
@@ -24,6 +25,9 @@ const dataSchema = new mongoose.Schema({
 
 // Definir el modelo de datos
 const Data = mongoose.model('Data', dataSchema);
+
+// Middleware para permitir solicitudes de dominios cruzados
+app.use(cors());
 
 // Middleware para parsear el cuerpo de las solicitudes
 app.use(bodyParser.json());

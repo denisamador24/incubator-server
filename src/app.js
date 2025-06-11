@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080; // Puerto en el que escuchará el servido
 const PASSWORD = process.env.PASSWORD; // Contraseña de la base de datos MongoDB
 
 // Conexión a la base de datos MongoDB
-mongoose.connect(`mongodb+srv://denis:${PASSWORD}@cluster0.kzcrusy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+mongoose.connect(`mongodb+srv://denis:sv3Gfyyw8cJhLC4f@cluster0.kzcrusy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
   .then(() => console.log('Conexión a MongoDB establecida'))
   .catch(err => console.error('Error al conectar a MongoDB:', err));
 
